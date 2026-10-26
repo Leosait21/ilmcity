@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ILMCITY — учебный центр в Душанбе</title>
+<style>
+:root{--bg:#fffaf0;--card:#fff;--ink:#1c1b3a;--mut:#5d5b78;--red:#a3182e;--gold:#f3b61f;--navy:#2b2f77;--green:#2e9b4e;--line:#eadfc8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1020;--card:#171a33;--ink:#f6f2e8;--mut:#a9a7c4;--line:#2a2e55;--red:#e0475d;--navy:#8d93ff}}
+:root[data-theme="dark"]{--bg:#0e1020;--card:#171a33;--ink:#f6f2e8;--mut:#a9a7c4;--line:#2a2e55;--red:#e0475d;--navy:#8d93ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.w{max-width:1080px;margin:auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-weight:900;letter-spacing:.5px;text-decoration:none;font-size:20px}
+.logo i{font-style:normal}.logo i:nth-child(1){color:var(--green)}.logo i:nth-child(2){color:var(--red)}.logo i:nth-child(3){color:var(--gold)}.logo i:nth-child(4){color:var(--navy)}.logo i:nth-child(5){color:var(--green)}.logo i:nth-child(6){color:var(--red)}.logo i:nth-child(7){color:var(--gold)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:600}
+nav ul a{text-decoration:none;color:var(--mut)}nav ul a:hover{color:var(--red)}
+@media(max-width:700px){nav ul{display:none}}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:800;text-decoration:none;background:var(--red);color:#fff;transition:transform .15s}
+.btn:hover{transform:translateY(-2px) rotate(-1deg)}.btn.g{background:var(--gold);color:#1c1b3a}.btn.o{background:none;border:2px solid var(--ink);color:var(--ink)}
+.hero{position:relative;overflow:hidden;padding:72px 0 80px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;z-index:0}
+.hero:before{width:420px;height:420px;background:var(--gold);right:-120px;top:-100px;opacity:.9}
+.hero:after{width:260px;height:260px;background:var(--navy);right:120px;bottom:-130px;opacity:.85}
+.hero .w{position:relative;z-index:1}
+.tag{display:inline-block;background:var(--navy);color:#fff;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700}
+@media(prefers-color-scheme:dark){.tag{color:#0e1020}}
+h1{font-size:clamp(40px,8vw,84px);line-height:1;margin:18px 0 16px;font-weight:900;letter-spacing:-1.5px;max-width:720px}
+h1 span{color:var(--red)}
+.lead{font-size:19px;color:var(--mut);max-width:520px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.strip{background:var(--navy);color:#fff;padding:14px 0;overflow:hidden;white-space:nowrap}
+@media(prefers-color-scheme:dark){.strip{color:#0e1020}}
+.strip div{display:inline-block;font-weight:800;font-size:18px;animation:m 28s linear infinite}
+@keyframes m{to{transform:translateX(-50%)}}
+section{padding:72px 0}
+h2{font-size:clamp(30px,5vw,48px);margin:0 0 10px;font-weight:900;letter-spacing:-.8px}
+.sub{color:var(--mut);margin:0 0 34px;max-width:560px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;transition:transform .2s}
+.card:hover{transform:translateY(-6px) rotate(-.6deg)}
+.card h3{margin:12px 0 6px;font-size:21px}.card p{margin:0;color:var(--mut);font-size:15px}
+.ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:var(--gold)}
+.sci{background:var(--gold);color:#1c1b3a;border-radius:28px;padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+@media(max-width:700px){.sci{grid-template-columns:1fr}}
+.sci h2{color:#1c1b3a}.sci p{margin:0 0 16px}
+.pills{display:flex;gap:10px;flex-wrap:wrap}.pills b{background:#fff;border-radius:16px;padding:12px 18px;font-size:17px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:16px}
+.rent{background:var(--red);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+@media(max-width:700px){.rent{grid-template-columns:1fr}}
+@media(prefers-color-scheme:dark){.rent{color:#0e1020}}
+.rent h2{margin:0 0 8px}.rent p{margin:0 0 20px;opacity:.95}
+.price{background:#fff;color:#1c1b3a;border-radius:24px;padding:20px 30px;text-align:center}
+.price b{display:block;font-size:64px;line-height:1;font-weight:900}.price small{font-weight:800;letter-spacing:1px}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.hl a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;font-weight:800;text-align:center}
+.hl a:hover{border-color:var(--red);color:var(--red)}
+.ct{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.ct .card h3{margin-top:0}.ct a{color:var(--red);font-weight:700}
+.rv{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}.rv .card{font-size:15px;position:relative}.rv .card:before{content:"“";position:absolute;top:2px;right:18px;font-size:80px;line-height:1;color:var(--gold);font-weight:900}.rv .card p{color:var(--ink);margin:0 0 10px}.who{font-weight:800;color:var(--red);margin-top:14px}.who small{display:block;color:var(--mut);font-weight:600}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<nav><div class="w">
+<a class="logo" href="#top"><i>I</i><i>L</i><i>M</i><i>C</i><i>I</i><i>T</i><i>Y</i></a>
+<ul><li><a href="#courses">Курсы</a></li><li><a href="#science">Science</a></li><li><a href="#rent">Аренда зала</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#contacts">Контакты</a></li></ul>
+<a class="btn" style="padding:9px 18px;font-size:14px" href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">Instagram</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="w">
+<span class="tag">Учебный центр · Душанбе</span>
+<h1>Добро пожаловать в <span>ILMCITY</span></h1>
+<p class="lead">Подготовка к школе, продлёнка, английский, русский, математика. Психолог и логопед.</p>
+<div class="cta">
+<a class="btn" href="https://t.me/ilmcitydushanbe" target="_blank" rel="noopener">Написать в Telegram</a>
+<a class="btn g" href="#courses">Наши курсы</a>
+</div>
+</div></header>
+
+<div class="strip"><div>Подготовка к школе ✦ Продлёнка ✦ Английский ✦ Русский ✦ Математика ✦ Психолог ✦ Логопед ✦ Аренда зала ✦ Подготовка к школе ✦ Продлёнка ✦ Английский ✦ Русский ✦ Математика ✦ Психолог ✦ Логопед ✦ Аренда зала ✦ </div></div>
+
+<section id="courses"><div class="w">
+<h2>Какие курсы есть в ILMCITY?</h2>
+<p class="sub">Напишите в директ — подберём подходящий курс.</p>
+<div class="grid">
+<div class="card"><div class="ic">🇷🇺</div><h3>Русский язык</h3><p>Открыта запись на новый курс: понятное изложение тем, практика и разбор заданий.</p></div>
+<div class="card"><div class="ic">➗</div><h3>Математика</h3></div>
+<div class="card"><div class="ic">🔤</div><h3>Английский язык</h3></div>
+<div class="card"><div class="ic">🎒</div><h3>Подготовка к школе</h3></div>
+<div class="card"><div class="ic">📚</div><h3>Продлёнка</h3></div>
+<div class="card"><div class="ic">🧠</div><h3>Психолог и логопед</h3></div>
+</div>
+</div></section>
+
+<section id="science" style="padding-top:0"><div class="w">
+<div class="sci">
+<div><span class="tag">для 8–11 классов</span>
+<h2 style="margin-top:12px">ILMCITY SCIENCE</h2>
+<p>Учебная поддержка по школьным предметам.</p>
+<div class="pills"><b>⚛️ Физика</b><b>🧪 Химия</b><b>🌱 Биология</b></div></div>
+<div style="font-size:90px;text-align:center">🔬</div>
+</div>
+<div class="two">
+<div class="card"><div class="ic" style="background:var(--green)">🧩</div><h3>KIDS CLUB</h3><p>Клуб для детей от ILMCITY. Подробности — в нашем Instagram.</p></div>
+<div class="card"><div class="ic" style="background:var(--navy)">⛺</div><h3>Лагерь</h3><p>Информация о лагере — в актуальных историях Instagram.</p></div>
+</div>
+</div></section>
+
+<section id="rent" style="padding-top:0"><div class="w">
+<div class="rent">
+<div><h2>Сдаём в аренду помещение для тренингов</h2><p>Светлый зал с большими окнами, длинными столами и креслами.</p>
+<a class="btn g" href="https://t.me/ilmcitydushanbe" target="_blank" rel="noopener">Узнать о зале</a></div>
+<div class="price"><b>90</b><small>СОМОНИ В ЧАС</small></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
+<h2>Больше в Instagram</h2>
+<p class="sub">Курсы, о нас, локация, лагерь, вакансии и аренда — всё в актуальных историях профиля.</p>
+<div class="hl">
+<a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">🏢 Аренда зала</a>
+<a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">🎓 Курсы</a>
+<a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">ℹ️ О нас</a>
+<a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">📍 Локация</a>
+<a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">⛺ Лагерь</a>
+<a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">🔍 Вакансии</a>
+</div>
+</div></section>
+
+<section id="reviews" style="padding-top:0"><div class="w">
+<h2>Отзывы наших родителей</h2>
+<p class="sub">Отзывы родителей — наша главная гордость. Спасибо за доверие и любовь!</p>
+<div class="rv">
+<div class="card"><p>В поисках центра дошкольного образования мой друг посоветовал мне ИлмСити, несмотря на далёкое расположение от дома, я не пожалел, что отвёз своих детей именно туда.</p><p>За 8 месяцев дети, которые абсолютно не говорили на русском языке, научились говорить, читать, писать и считать, а также параллельно изучаем английский язык.</p><p>Отдельное спасибо Мисс Сайёре, с первых занятий мы уже видели результаты и заинтересованность детей и ходим туда с удовольствием. Однозначно рекомендую этот образовательный центр!</p><div class="who">Иралиев Фаридун<small>Папа Имрона и дядя Ясиры</small></div></div>
+<div class="card"><p>От всей души, от чистого сердца, хочу выразить свою искреннюю благодарность за Вашу заботу и внимание к моему сыну во время пребывания в Вашем учебном центре «Илмсити».</p><p>Несмотря на короткий срок посещения учебного центра, есть значительные изменения в лучшую сторону в его поведении, усидчивости к занятиям, ещё раз хочу выразить искреннюю благодарность.</p><p>Процветания, успехов и удачи вашему учебному центру «Илмсити»!</p><div class="who">Мама Рустама</div></div>
+<div class="card"><p>Мой сын с сентября месяца ходит в Илмсити на курс подготовки к школе.</p><p>Шахром пришёл в Илмсити и научился писать, читать, математике, русскому языку, английскому языку, рисовать и многому другому.</p><p>В Илмсити дети не только учатся, но и играют в разные весёлые игры, рисуют, общаются с друзьями. Мы безмерно рады Илмсити. Мы любим Илмсити!</p><div class="who">Мама Шахрома</div></div>
+<div class="card"><p>Ман волидайни Идрис ва Сафия. Тули 7 моҳ мешавад, ки фарзандони мо дар ин муассисаи томактабии Илмсити таҳсил доранд.</p><p>Дар ин муддат хело пешравиҳо зиёд дидем: қобилияти зеҳнӣ, забономӯзӣ ва донистани ҳарфҳои забони русӣ ва англисиро хуб омӯхтанд.</p><p>Аз ҳамаи Шумо хусусан муаллимаи азиз миннатдорем.</p><div class="who">Модари Идрис ва Сафия</div></div>
+<div class="card"><p>Манижа начала ходить в Илмсити с 12 декабря. В IlmCity научилась читать, писать, учить стихи. Преподаватель очень отзывчивый.</p><p>Манижа начала учить английские слова. Весь алфавит выучила по английскому языку, ходит в ваш центр с удовольствием. Нам понравилось в Илмсити и цены очень приемлемые.</p><p>Я советую Илмсити всем, кто хочет подготовить к школе своих детей.</p><div class="who">Салихбоева Гулнора<small>Мама Манижи</small></div></div>
+</div>
+</div></section>
+
+<section id="contacts" style="padding-top:0"><div class="w">
+<h2>Как нас найти</h2>
+<p class="sub">Душанбе. Работаем с понедельника по субботу, воскресенье — выходной.</p>
+<div class="ct">
+<div class="card"><h3>Адреса</h3><p>ул. Шириншо Шотемура, 61, 2 этаж<br>Район Исмоили Сомони, Душанбе</p><p style="margin-top:10px">ул. Пулоди, 43 (здание JYSK / Хонаи Ман), 3 этаж, домофон 1</p><p style="margin-top:12px"><a href="https://2gis.tj/ru/dushanbe/firm/70000001104656902?m=68.795309%2C38.578521%2F16" target="_blank" rel="noopener">Открыть в 2ГИС →</a></p></div>
+<div class="card"><h3>Часы работы</h3><p>Пн–Сб: 09:00–20:00<br>Воскресенье: выходной</p></div>
+<div class="card"><h3>Телефон</h3><p><a href="tel:+992555000054">+992 555 00 00 54</a><br><a href="https://wa.me/992555000054" target="_blank" rel="noopener">Написать в WhatsApp</a></p><h3 style="margin-top:16px">Email</h3><p><a href="mailto:ilmcity.dushanbe@gmail.com">ilmcity.dushanbe@gmail.com</a></p></div>
+<div class="card"><h3>Мы в соцсетях</h3><p><a href="https://www.instagram.com/ilmcity.dushanbe/" target="_blank" rel="noopener">Instagram</a><br><a href="https://t.me/ilmcitydushanbe" target="_blank" rel="noopener">Telegram</a><br><a href="https://www.threads.net/@ilmcity.dushanbe" target="_blank" rel="noopener">Threads</a></p></div>
+</div>
+</div></section>
+
+<footer><div class="w">© ILMCITY · Учебный центр, Душанбе</div></footer>
+</body>
+</html>
